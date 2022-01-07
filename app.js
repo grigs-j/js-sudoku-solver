@@ -43,13 +43,18 @@ function joinValues() {
 //getting info from post res
 function populateValues(isSolvable, solution) {
     const inputs = document.querySelectorAll("input");
-    //is each is true, then populate board
+    //if each is true, then populate board
     if (isSolvable && solution) {
         inputs.forEach((input, i) => {
             //while looping thru stack, assign each iteration to that solution value
             input.value = solution[i];
 
             solutionText.innerHTML = "This is the answer! Good work!";
+            solveBtn.innerText = "Reset";
+            //reset game board
+            solveBtn.addEventListener("click", () => {
+                window.location.assign("./index.html");
+            });
         });
     } else {
         solutionText.innerHTML = "This is puzzle isn't solvable";
@@ -60,8 +65,8 @@ function solve() {
     joinValues();
     //join method changes string back to array before post req
     const data = { numbers: submittedInputs.join("") };
-    console.log("data", data);
-
+    // console.log("data", data);
+    solveBtn.innerText = "Solving";
     fetch("http://localhost:8000/solve", {
         method: "POST",
         headers: {
@@ -72,7 +77,7 @@ function solve() {
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log(data);
+            // console.log(data);
             populateValues(data.solvable, data.solution);
             submittedInputs = [];
         })

@@ -17,15 +17,25 @@
         <title>Sudoku solver</title>
     </head>
     <body>
-        <div class="container">
-            <div class="text-content">
-                <h1 class="title">sudoku solver</h1>
-                <a href="" class="btn">github code</a>
-                <a href="" class="btn">back to projects</a>
+        <div class="main-container">
+            <div class="sidebar">
+                <button class="btn-solve" id="solve-btn">solve</button>
+                <a
+                    href="https://github.com/grigs-j/js-sudoku-solver"
+                    class="btn"
+                    target="_blank"
+                    >github</a
+                >
+                <a href="#" class="btn">projects</a>
+
+                <p id="solution-text"></p>
             </div>
-            <div class="puzzle-board" id="puzzle-board"></div>
-            <button class="btn" id="solve-btn">solve</button>
-            <p id="solution-text"></p>
+            <div class="puzzle-container">
+                <h1 class="title">sudoku solver</h1>
+                <div class="puzzle-board" id="puzzle-board"></div>
+            </div>
+            <!-- <div class="text-content">
+            </div> -->
         </div>
     </body>
 </html>

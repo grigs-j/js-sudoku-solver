@@ -11,27 +11,12 @@ html {
 }
 body {
     background-color: #ececec;
-    /* font-family: $jfs; */
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     line-height: 1.4;
     margin: 0;
     padding: 0;
 }
-.container {
-    width: 90%;
-    margin: 0 auto;
-}
-/* a {
-  color: $dark;
-  text-decoration: underline 0.08em $dark;
-  transition: text-decoration-color 150ms, text-underline-offset 300ms;
-  transition: color 250ms ease-in-out; */
-/* } */
-/* a:hover { */
-/* color: $accent;
-  text-decoration-color: $accent;
-  text-underline-offset: 0.15em; */
-/* } */
 ul,
 li {
     list-style: none;
@@ -45,16 +30,86 @@ p {
     padding: 0;
 }
 
+.main-container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+}
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 12rem;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 114px;
+}
+.title {
+    font-size: 2.25rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+.btn {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border: 1px solid #888;
+    text-decoration: none;
+    color: #000;
+    border-radius: 2px;
+    height: 2rem;
+    width: 7rem;
+    padding: 0.25rem 0;
+}
+.btn:hover {
+    background-color: #999;
+}
+.btn-solve {
+    cursor: pointer;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    display: block;
+    height: 3rem;
+    width: 8.5rem;
+    outline: none;
+    border: 1px solid #888;
+    margin-bottom: 3rem;
+}
+.btn-solve:hover {
+    background-color: #999;
+}
+#solution-text {
+    text-align: center;
+    font-size: 2rem;
+}
 .puzzle-board {
     width: 450px;
     height: 450px;
+    margin: 0 auto;
 }
 .puzzle-board input {
     width: 50px;
     height: 50px;
     border-spacing: 0;
     border: 0.5px solid #888;
+    text-align: center;
+    font-size: 1.5rem;
 }
 .odd-section {
-    background-color: #e1e1e1;
+    background-color: #ebebeb;
+}
+/* remove input arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
 }
